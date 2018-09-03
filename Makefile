@@ -5,3 +5,7 @@ test:
 .PHONY: lint
 lint:
 	bundle exec rubocop -a
+
+.PHONY: release
+release:
+	bundle exec rake release
