@@ -1,0 +1,13 @@
+inherit_gem:
+  onkcop:
+    - "config/rubocop.yml"
+    - "config/rspec.yml"
+
+AllCops:
+  TargetRubyVersion: 2.5
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
