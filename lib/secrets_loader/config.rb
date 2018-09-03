@@ -4,15 +4,16 @@ require 'aws-sdk-secretsmanager'
 
 module SecretsLoader
   class Config
-    attr_accessor :secret_id
-    attr_writer :client
+    attr_writer :loader
 
-    def initialize
-      @secret_id = ENV['SECRETS_MANAGER_SECRET_ID']
+    def loader
+      @loader ||= default_loader
     end
 
-    def client
-      @client ||= Aws::SecretsManager::Client.new
+    private
+
+    def default_loader
+      SecretsLoader::Loader::SecretsManager.new
     end
   end
 end
